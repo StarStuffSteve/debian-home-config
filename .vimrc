@@ -26,6 +26,16 @@ filetype plugin indent on
 let g:markdown_enable_spell_checking = 0
 let g:markdown_enable_input_abbreviations = 0
 
+"##########"
+"  Syntax  "
+"##########"
+
+"############"
+"  Shortcuts "
+"############"
+
+set pastetoggle=<F2>
+
 "############"
 "  Personal  "
 "############"
