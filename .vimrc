@@ -20,6 +20,15 @@ filetype plugin indent on
 " :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+"########"
+"  Auto  "
+"########"
+
+augroup Shebang
+  autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python\<nl>\"|$
+  autocmd BufNewFile *.sh 0put =\"#!/bin/bash\<nl>\"|$
+augroup END
+
 "############"
 "  Markdown  "
 "############"
@@ -34,7 +43,8 @@ let g:markdown_enable_input_abbreviations = 0
 "  Shortcuts "
 "############"
 
-set pastetoggle=<F2>
+let mapleader = ","
+set pastetoggle=<F11>
 
 "############"
 "  Personal  "
