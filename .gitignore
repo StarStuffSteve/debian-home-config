@@ -1,4 +1,4 @@
-# ignore all files
+# ignore everything
 *
 
 */
@@ -6,18 +6,17 @@
 */**
 
 
-# not these
+# top level exceptions
 !.gitignore
 !.bashrc
 !.hushlogin
 !.profile
 !.selected_editor
 !.tmux.conf
-!.viminfo
 !.vimrc
 !.zshrc
 
-# not these
+# sub directory exceptions
 !.oh-my-zsh
 !.oh-my-zsh/
 !.oh-my-zsh/**
@@ -31,6 +30,7 @@
 .oh-my-zsh/themes/**
 !.oh-my-zsh/themes/kphoen.zsh-theme
 
+# I don't think any of this is need
 .oh-my-zsh/templates/**
 .oh-my-zsh/log/**
 .oh-my-zsh/cache/**
