@@ -15,6 +15,7 @@
 !.tmux.conf
 !.vimrc
 !.zshrc
+!.setup_home.sh
 
 # sub directory exceptions
 !.oh-my-zsh
