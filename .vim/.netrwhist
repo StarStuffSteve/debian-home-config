@@ -1,4 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/root/StarStuffSteve/docker'
-let g:netrw_dirhist_2='/root/Docker/debian-dev-base'
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/root/SSL_CA'
+let g:netrw_dirhist_2='/root/SSL_CA/git_client_certs/scripts'
+let g:netrw_dirhist_3='/root/SSL_CA/scripts'
+let g:netrw_dirhist_4='/opt/scripts/remote_scripts'
+let g:netrw_dirhist_5='/opt/scripts'
+let g:netrw_dirhist_6='/opt/scripts/remote_scripts'
+let g:netrw_dirhist_7='/opt/scripts/analyze_iptables'
