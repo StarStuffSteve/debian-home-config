@@ -27,6 +27,8 @@ filetype plugin indent on
 augroup Shebang
   autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python\<nl>\"|$
   autocmd BufNewFile *.sh 0put =\"#!/bin/bash\<nl>\"|$
+  autocmd BufNewFile *.pl 0put =\"#!/usr/bin/perl\<nl>\"|$
+  autocmd BufNewFile *.pm 0put =\"#!/usr/bin/perl\<nl>\"|$
 augroup END
 
 "############"
