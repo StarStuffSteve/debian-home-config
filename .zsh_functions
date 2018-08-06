@@ -1,10 +1,11 @@
 function git_acp() {
+  CMSG=$1
   gs
   echo 
-  echo "Commit message:" $1
+  echo "Commit message:" $CMSG
   echo " --- --- --- "
-  echo -n "Confirm: "; read -n 1 REPLY; echo
-  if [[ ! $REPLY =~ ^[Yy]$ ]]
+  echo -n "Confirm: "; read -n 1 RESPONSE; echo
+  if [[ ! $RESPONSE =~ ^[Yy]$ ]]
   then
     ga .
     gcm $1
