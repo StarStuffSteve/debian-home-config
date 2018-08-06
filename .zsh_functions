@@ -4,11 +4,11 @@ function git_acp() {
   echo 
   echo "Commit message:" $CMSG
   echo " --- --- --- "
-  echo -n "Confirm: "; read -n 1 RESPONSE; echo
-  if [[ ! $RESPONSE =~ ^[Yy]$ ]]
+  echo -n "Confirm: "; read RESPONSE; echo
+  if [[ $RESPONSE =~ ^[Yy]$ ]]
   then
     ga .
-    gcm $CMSG
+    gcm ${CMSG}
     gpom
   fi
 }
