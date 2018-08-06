@@ -1,6 +1,8 @@
 ### -> Shell
 alias edit_alias='vim ~/.zsh_aliases'
-alias ls_alias='less ~/.zsh_aliases'
+alias show_alias='less ~/.zsh_aliases'
+functions edit_function='vim ~/.zsh_functions'
+functions show_function='less ~/.zsh_functions'
 
 ### -> Sys
 alias chx="chmod +x"
