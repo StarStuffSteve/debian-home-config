@@ -1,0 +1,13 @@
+function git_acp() {
+  gs
+  echo 
+  echo "Commit message:" $1
+  echo " --- --- --- "
+  echo -n "Confirm: "; read -n 1 REPLY; echo
+  if [[ ! $REPLY =~ ^[Yy]$ ]]
+  then
+    ga .
+    gcm $1
+    gpom
+  fi
+}
