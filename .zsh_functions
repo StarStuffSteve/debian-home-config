@@ -8,7 +8,7 @@ function git_acp() {
   if [[ ! $RESPONSE =~ ^[Yy]$ ]]
   then
     ga .
-    gcm $1
+    gcm $CMSG
     gpom
   fi
 }
