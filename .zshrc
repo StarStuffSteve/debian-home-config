@@ -27,3 +27,4 @@ export LANGUAGE=en_US:en
 export LC_ALL=en_US.UTF-8
 
 source ~/.zsh_aliases
+source ~/.zsh_functions

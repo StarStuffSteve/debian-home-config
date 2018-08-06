@@ -1,0 +1,56 @@
+### -> Shell
+alias edit_alias='vim ~/.zsh_aliases'
+alias ls_alias='less ~/.zsh_aliases'
+
+### -> Sys
+alias chx="chmod +x"
+
+### -> Git
+alias g='git'
+
+alias gs='git status'
+
+alias gcl='git clone'
+
+alias grm='git rm'
+
+alias ga='git add'
+alias gap='git add -p'
+alias gall='git add -A'
+
+alias grh='git reset HEAD'
+
+alias gm="git merge"
+
+alias gmv='git mv'
+
+alias gl='git pull'
+
+alias gp='git push'
+alias gpo='git push origin'
+alias gpom='git push origin master'
+
+alias gr='git remote'
+alias grv='git remote -v'
+alias gra='git remote add'
+
+alias gd='git diff'
+alias gdv='git diff -w "$@" | vim -R -'
+
+alias gc='git commit -v'
+alias gcm='git commit -v -m'
+
+alias gb='git branch'
+
+alias gcp='git cherry-pick'
+
+alias gco='git checkout'
+alias gcom='git checkout master'
+alias gcb='git checkout -b'
+
+alias gexport='git archive --format zip --output'
+
+alias gll='git log --graph --pretty=oneline --abbrev-commit'
+alias gg="git log --graph --pretty=format:'%C(bold)%h%Creset%C(magenta)%d%Creset %s %C(yellow)<%an> %C(cyan)(%cr)%Creset' --abbrev-commit --date=relative"
+alias gsl="git shortlog -sn"
+alias gwc="git whatchanged"
