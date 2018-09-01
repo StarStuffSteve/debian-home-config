@@ -1,0 +1,53 @@
+version: '3'
+services:
+  # 
+  # --- Backend ---
+  #
+  cpp-sim-battery:
+    image: 949790903591.dkr.ecr.eu-central-1.amazonaws.com/cpp-sim-battery:latest
+    #hostname: cpp-sim-battery-2
+    logging:
+      driver: awslogs
+      options: 
+        awslogs-group: demo-log-group
+        awslogs-region: eu-central-1
+        awslogs-stream-prefix: cpp-sim-battery-2
+  cpp-sim-battery:
+    image: 949790903591.dkr.ecr.eu-central-1.amazonaws.com/cpp-sim-battery:latest
+    #hostname: cpp-sim-battery-2
+    logging:
+      driver: awslogs
+      options: 
+        awslogs-group: demo-log-group
+        awslogs-region: eu-central-1
+        awslogs-stream-prefix: cpp-sim-battery-2
+  cpp-sim-battery:
+    image: 949790903591.dkr.ecr.eu-central-1.amazonaws.com/cpp-sim-battery:latest
+    #hostname: cpp-sim-battery-3
+    logging:
+      driver: awslogs
+      options: 
+        awslogs-group: demo-log-group
+        awslogs-region: eu-central-1
+        awslogs-stream-prefix: cpp-sim-battery-3
+  # 
+  # --- Frontend ---
+  #
+  flask-frontend:
+    image: 949790903591.dkr.ecr.eu-central-1.amazonaws.com/flask-frontend:latest
+    hostname: flask-frontend
+    ports:
+      - "80:80"
+    links:
+      - cpp-sim-battery-1
+      - cpp-sim-battery-2
+      - cpp-sim-battery-3
+    environment:
+      - SIM_BASE=cpp-sim-battery
+      - SIM_HOSTS=3
+    logging:
+      driver: awslogs
+      options:
+        awslogs-group: demo-log-group
+        awslogs-region: eu-central-1
+        awslogs-stream-prefix: flask-frontend

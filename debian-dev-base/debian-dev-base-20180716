@@ -1,0 +1,37 @@
+FROM debian:stretch
+
+WORKDIR /root
+
+RUN apt update && apt install -y \
+  tmux \
+  vim \
+  git \
+  zsh \
+  locales \
+  wget \
+  curl 
+
+RUN locale -a
+RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
+    locale-gen
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en 
+ENV LC_ALL en_US.UTF-8
+RUN locale -a
+
+RUN git clone https://github.com/StarStuffSteve/debian-home-config.git 
+RUN cp -r /root/debian-home-config/.[a-zA-Z0-9]* /root
+RUN rm -rf debian-home-config
+
+RUN git clone https://github.com/tmux-plugins/tpm /root/.tmux/plugins/tpm
+RUN /root/.tmux/plugins/tpm/scripts/install_plugins.sh
+
+RUN git clone https://github.com/VundleVim/Vundle.vim.git /root/.vim/bundle/Vundle.vim
+RUN vim +PluginInstall +qall
+
+
+EXPOSE 80
+EXPOSE 443
+EXPOSE 22
+
+CMD ["/bin/zsh"]

@@ -1,0 +1,10 @@
+version: 1
+task_definition:
+  task_execution_role: ecsTaskExecutionRole
+  services:
+    cpp-sim-battery:
+      cpu_shares: 256
+      mem_limit: 524288000
+    flask-frontend:
+      cpu_shares: 256
+      mem_limit: 524288000

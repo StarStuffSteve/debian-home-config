@@ -1,0 +1,31 @@
+app.py
+Dockerfile
+pipenv
+  install_pipenv.sh
+  enter_pipenv.sh
+  pipenv_flask.sh
+  pipenv_gen_requirements.sh
+Dockerfile
+  add RUN & demo
+.dockerignore
+build_image.sh
+  docker image list
+run_container_on_port.sh 80
+  browser or wget
+  docker conatiner list
+
+enter_containter.sh
+  make change
+  exit
+stop containter
+  docker container list
+run_container_on_port.sh 80
+  docker conatiner list
+enter_container.sh
+  make change
+  commit_container.sh
+  exit
+stop container
+run_container_on_port.sh 80
+enter_container.sh
+  show change

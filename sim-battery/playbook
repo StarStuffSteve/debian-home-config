@@ -1,0 +1,43 @@
+local dev
+  cpp-battery-sim
+    run
+  flask-frontend
+    run
+  local compose
+    show web
+
+ecr
+  console
+  ? create repo
+  ? list docker images
+  ? push images
+
+ecs-cli
+  # configure ecs-cli
+  ? task execution role
+  ? create log group
+  ecs-cli-up
+    console
+    during deploy
+      file: docker-compose
+      file: ecs-params
+  ecs-cli-compose-up
+    show web
+    show logs
+  ecs-cli-compose-down
+
+cpp-sim-battery
+  trivial change
+    RunSimulation.cpp
+    build
+      cmake
+      make
+    build-image
+    run-container
+    local compose
+      show web
+    push-to-ecr
+    ecs-cli
+      ecs-cli-compose-up
+        show web
+        show logs

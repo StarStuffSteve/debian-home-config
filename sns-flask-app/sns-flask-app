@@ -1,0 +1,16 @@
+FROM python:3.6-slim
+
+USER root
+
+WORKDIR /app
+
+ADD code /app
+
+RUN pip install pipenv
+RUN pipenv install --system --deploy
+ 
+EXPOSE 3829
+
+ENV NAME SNS
+
+CMD ["python", "sns.py"]

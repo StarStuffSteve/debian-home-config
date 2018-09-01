@@ -1,0 +1,27 @@
+version: '3'
+services:
+  #
+  # --- Backend ---
+  #
+  cpp-sim-battery-1:
+    image: cpp-sim-battery:latest
+  cpp-sim-battery-2:
+    image: cpp-sim-battery:latest
+  cpp-sim-battery-3:
+    image: cpp-sim-battery:latest
+  #
+  # --- Frontend ---
+  #
+  flask-frontend:
+    image: flask-frontend:latest
+    hostname: flask-frontend
+    ports:
+      - "80:80"
+    # FIXME: Use networks instead of links (not supported by AWS ECS yet)
+    links:
+      - cpp-sim-battery-1
+      - cpp-sim-battery-2
+      - cpp-sim-battery-3
+    environment:
+      - SIM_BASE=cpp-sim-battery
+      - SIM_HOSTS=3
