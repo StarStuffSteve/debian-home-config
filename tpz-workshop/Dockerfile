@@ -5,13 +5,13 @@ FROM python:3.6-slim
 WORKDIR /app
 
 # Add just the requirements file to the app directory
-ADD ./code/requirements.txt /app
+COPY ./code/requirements.txt /app
 
 # Install any needed packages specified in requirements.txt
 RUN pip3 install --trusted-host pypi.python.org -r requirements.txt
 
 # Add the remainder of our application code
-ADD ./code /app
+COPY ./code/app.py /app
 #RUN ls
 
 # Make port 80 available to the world outside this container

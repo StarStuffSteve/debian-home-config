@@ -1,3 +1,3 @@
 #!/bin/bash
 
-pipenv shell
+pipenv shell --three --fancy
