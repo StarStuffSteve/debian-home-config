@@ -3,30 +3,36 @@ services:
   # 
   # --- Backend ---
   #
-  cpp-sim-battery:
+  cpp-sim-battery-1:
+    # Pulling from ECR rather than locally
     image: 949790903591.dkr.ecr.eu-central-1.amazonaws.com/cpp-sim-battery:latest
-    #hostname: cpp-sim-battery-2
+    # Default config of mapping stdout to Cloudwatch logs
     logging:
       driver: awslogs
       options: 
+        # One must setup the demo-log-group first
+        awslogs-group: demo-log-group
+        awslogs-region: eu-central-1
+        awslogs-stream-prefix: cpp-sim-battery-1
+  cpp-sim-battery-2:
+    # Pulling from ECR rather than locally
+    image: 949790903591.dkr.ecr.eu-central-1.amazonaws.com/cpp-sim-battery:latest
+    # Default config of mapping stdout to Cloudwatch logs
+    logging:
+      driver: awslogs
+      options: 
+        # One must setup the demo-log-group first
         awslogs-group: demo-log-group
         awslogs-region: eu-central-1
         awslogs-stream-prefix: cpp-sim-battery-2
-  cpp-sim-battery:
+  cpp-sim-battery-3:
+    # Pulling from ECR rather than locally
     image: 949790903591.dkr.ecr.eu-central-1.amazonaws.com/cpp-sim-battery:latest
-    #hostname: cpp-sim-battery-2
+    # Default config of mapping stdout to Cloudwatch logs
     logging:
       driver: awslogs
       options: 
-        awslogs-group: demo-log-group
-        awslogs-region: eu-central-1
-        awslogs-stream-prefix: cpp-sim-battery-2
-  cpp-sim-battery:
-    image: 949790903591.dkr.ecr.eu-central-1.amazonaws.com/cpp-sim-battery:latest
-    #hostname: cpp-sim-battery-3
-    logging:
-      driver: awslogs
-      options: 
+        # One must setup the demo-log-group first
         awslogs-group: demo-log-group
         awslogs-region: eu-central-1
         awslogs-stream-prefix: cpp-sim-battery-3
@@ -34,10 +40,12 @@ services:
   # --- Frontend ---
   #
   flask-frontend:
+    # Pulling from ECR rather than locally
     image: 949790903591.dkr.ecr.eu-central-1.amazonaws.com/flask-frontend:latest
     hostname: flask-frontend
     ports:
       - "80:80"
+    # P2P links to each backend simulation containers
     links:
       - cpp-sim-battery-1
       - cpp-sim-battery-2

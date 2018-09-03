@@ -1,3 +1,4 @@
+# Basic simple 'slim' base OS image
 FROM debian:stretch-slim
 
 # Expose port used by Redis
@@ -5,13 +6,14 @@ EXPOSE 6379
 
 # Add and run start script on boot
 COPY ./config/scripts /scripts
+# This will install some some basic required services
 RUN /scripts/init.sh
 
 # Add redis config
 COPY ./config/redis.conf /etc/redis/redis.conf
 
-# Add executable 
 WORKDIR /app
+# Add executable 
 ADD ./code/build/RunSimulation /app
 
 CMD /scripts/start.sh

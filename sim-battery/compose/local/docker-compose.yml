@@ -1,4 +1,5 @@
 version: '3'
+# Using local container images
 services:
   #
   # --- Backend ---

@@ -4,8 +4,8 @@
             "logGroupName": "demo-log-group",
             "metricFilterCount": 0,
             "storedBytes": 0,
-            "creationTime": 1535577386245,
-            "arn": "arn:aws:logs:eu-central-1:949790903591:log-group:demo-log-group:*"
+            "arn": "arn:aws:logs:eu-central-1:949790903591:log-group:demo-log-group:*",
+            "creationTime": 1535577386245
         }
     ]
 }

@@ -15,6 +15,7 @@ num_redis_hosts = int(os.getenv('SIM_HOSTS', '-1'))
 # TODO: Use to get all unseen host data
 host_data = {}
 
+# Attempt to attach to each backend simulation instance
 for num in range(1, num_redis_hosts+1):
     redis_host = base_redis_host + "-" + str(num) 
     print("Attempting to connect to: {}".format(redis_host))
@@ -42,14 +43,19 @@ def home():
             last_step_id = -1;
             step_map = {};
             try:
+                # Get last step id for a given simulation
                 last_step_id = int(redis_conn.mget("last_step_id")[0])
+                # Use last step id to get the data map for the given step
                 step_map_values = redis_conn.hmget(str(last_step_id), ['soc', 'current', 'voltage'])
 
                 step_map_keys = ['soc', 'current', 'voltage']
+                # Create dictionary from list of values for a given step
                 step_map = dict(zip(step_map_keys, step_map_values))
+            
             except RedisError as e:
                 step_map = {"Error": "Unavailable"}
 
+            # Locally store data for a given simulation host for use in rendered template
             host_data[redis_host] = {}
             host_data[redis_host]["map"] = step_map
             host_data[redis_host]["step"] = last_step_id
@@ -63,12 +69,14 @@ def home():
                         db=0
                     )
             except RedisError as e:
-                redis_connections[host] = False
+                redis_connections[redis_host] = False
 
+    # Order host data by hostname
     ord_host_data = OrderedDict(sorted(host_data.items(),\
                 key=lambda t: t[0])
             )
-            
+    
+    # Render template which will create section for each host data item
     return render_template("index.html",\
                 env_greet=os.getenv("GREET", "Docker"),
                 hostname=socket.gethostname(),

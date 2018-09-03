@@ -1,7 +1,7 @@
 #!/bin/bash
 
-docker build -f $1 -t $1 .
+./scripts/build-image.sh $2
 echo "--- --- --- ---"
 echo "--> Running <--"
 echo "--- --- --- ---"
-docker run $1
+./scripts/run-container-on-port.sh $1 $2

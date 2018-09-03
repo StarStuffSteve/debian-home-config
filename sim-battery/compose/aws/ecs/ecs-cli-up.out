@@ -1,5 +1,5 @@
-VPC created: vpc-09de058cf3ffef41b
-Security Group created: sg-00e20726f2bd27041
-Subnet created: subnet-04c1ba866dc930227
-Subnet created: subnet-036bcf460401bd5b4
+VPC created: vpc-02329db8110a6e154
+Security Group created: sg-01754ca3278b39de5
+Subnet created: subnet-02e5487a659a9dc73
+Subnet created: subnet-0a36c1ed29b0f6cd5
 Cluster creation succeeded.
