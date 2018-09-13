@@ -1,8 +1,11 @@
 ### -> Shell
-alias edit_alias='vim ~/.zsh_aliases'
-alias show_alias='less ~/.zsh_aliases'
-functions edit_function='vim ~/.zsh_functions'
-functions show_function='less ~/.zsh_functions'
+alias edit_aliases='vim ~/.zsh_aliases'
+alias show_aliases='less ~/.zsh_aliases'
+functions edit_functions='vim ~/.zsh_functions'
+functions show_functions='less ~/.zsh_functions'
+
+### -> Packages
+alias show_big_packages='dpkg-query -Wf '"'"'${Installed-Size}\t${Package}\n\'"'"' | sort -n'
 
 ### -> Sys
 alias chx="chmod +x"
