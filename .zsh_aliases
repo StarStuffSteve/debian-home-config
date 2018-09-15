@@ -8,6 +8,7 @@ functions show_functions='less ~/.zsh_functions'
 alias show_big_packages='dpkg-query -Wf '"'"'${Installed-Size}\t${Package}\n\'"'"' | sort -n'
 
 ### -> Sys
+alias c='clear'
 alias chx="chmod +x"
 
 ### -> Git
