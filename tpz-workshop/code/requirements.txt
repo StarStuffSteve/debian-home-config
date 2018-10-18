@@ -1,0 +1,18 @@
+################################################################################
+# This requirements file has been automatically generated from `Pipfile` with
+# `pipenv-to-requirements`
+#
+#
+# This has been done to maintain backward compatibility with tools and services
+# that do not support `Pipfile` yet.
+#
+# Do NOT edit it directly, use `pipenv install [-d]` to modify `Pipfile` and
+# `Pipfile.lock` and then regenerate `requirements*.txt`.
+################################################################################
+
+click==6.7
+flask==1.0.2
+itsdangerous==0.24
+jinja2==2.10
+markupsafe==1.0
+werkzeug==0.14.1

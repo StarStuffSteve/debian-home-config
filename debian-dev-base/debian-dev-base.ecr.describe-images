@@ -1,0 +1,14 @@
+{
+    "imageDetails": [
+        {
+            "imageSizeInBytes": 129986957,
+            "imagePushedAt": 1531640105.0,
+            "imageTags": [
+                "latest"
+            ],
+            "imageDigest": "sha256:034fe870c5eee22091aba23d24444bc30439b014857b79d7626e0160ca16ef06",
+            "repositoryName": "debian-dev-base",
+            "registryId": "949790903591"
+        }
+    ]
+}

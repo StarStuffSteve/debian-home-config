@@ -1,0 +1,18 @@
+version: 1
+# ECS needs a little more information about the resources 
+# the containers I intend to use with need
+task_definition:
+  task_execution_role: ecsTaskExecutionRole
+  services:
+    cpp-sim-battery-1:
+      cpu_shares: 256
+      mem_limit: 524288000
+    cpp-sim-battery-2:
+      cpu_shares: 256
+      mem_limit: 524288000
+    cpp-sim-battery-3:
+      cpu_shares: 256
+      mem_limit: 524288000
+    flask-frontend:
+      cpu_shares: 256
+      mem_limit: 524288000

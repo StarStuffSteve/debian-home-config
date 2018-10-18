@@ -1,0 +1,11 @@
+{
+    "repositories": [
+        {
+            "repositoryName": "debian-dev-base",
+            "repositoryUri": "949790903591.dkr.ecr.eu-central-1.amazonaws.com/debian-dev-base",
+            "registryId": "949790903591",
+            "repositoryArn": "arn:aws:ecr:eu-central-1:949790903591:repository/debian-dev-base",
+            "createdAt": 1531638178.0
+        }
+    ]
+}

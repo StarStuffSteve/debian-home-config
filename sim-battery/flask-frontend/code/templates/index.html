@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+	<body>
+
+		<h3>Hello {{ env_greet }}!</h3><br>
+		<b>Hostname:</b> {{ hostname }}<br><br>
+
+		{% for host, data in host_data.items() %}
+			<p>Host <b>{{ host }}</b>: Last step: {{ data["step"] }}</p>
+			<p>Last step map: {{ data["map"] }}</p>
+		{% endfor %}
+
+	</body>
+</html>
