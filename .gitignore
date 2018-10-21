@@ -47,6 +47,8 @@
 !.tmux/
 !.tmux/**
 .tmux/resurrect/**
+.tmux/plugins/tmux-resurrect
+.tmux/plugins/tmux-resurrect**
 
 !.vim
 !.vim/
