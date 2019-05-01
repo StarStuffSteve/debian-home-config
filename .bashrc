@@ -97,6 +97,3 @@ fi
 #if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 #    . /etc/bash_completion
 #fi
-
-# added by Miniconda3 installer
-export PATH="/root/miniconda3/bin:$PATH"
