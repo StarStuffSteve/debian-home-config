@@ -1,8 +1,9 @@
 #!/bin/bash
 
+cd ~
 echo "Operating in " ~
 
-apt update && apt install -y \
+sudo apt update && sudo apt install -y \
   tmux \
   vim \
   git \
@@ -11,8 +12,8 @@ apt update && apt install -y \
   wget \
   curl
 
-sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
-locale-gen
+sudo sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
+sudo locale-gen
 
 rm -rf ~/.tmux/plugins/*
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
