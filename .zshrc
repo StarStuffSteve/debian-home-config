@@ -1,4 +1,4 @@
-export ZSH="/root/.oh-my-zsh"
+export ZSH="~/.oh-my-zsh"
 
 ZSH_THEME="kphoen"
 
@@ -21,7 +21,7 @@ else
   export EDITOR='vim'
 fi
 
-export PATH=~/.local/bin:/root/miniconda3/bin:$PATH
+export PATH=~/.local/bin:$PATH
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US:en
 export LC_ALL=en_US.UTF-8
